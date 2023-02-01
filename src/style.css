@@ -38,3 +38,7 @@ input {
 *:focus {
     outline: none;
 }
+
+#tokenbox {
+    display: none;
+}
