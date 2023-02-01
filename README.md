@@ -1,0 +1,2 @@
+# AppKC
+Electron ChatKC Client

@@ -1,0 +1,40 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 8pt;
+}
+
+#branding {
+    background-color: lightgray;
+    padding: 4pt;
+    font-weight: 100;
+    border-radius: 4pt;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#msgdiv {
+    position: fixed;
+    left: 0;
+}
+
+input {
+    padding: 8pt;
+}
+
+#msgbox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 45%;
+}
+
+#srvbox {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 45%;
+}
+
+*:focus {
+    outline: none;
+}
