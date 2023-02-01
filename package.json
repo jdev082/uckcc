@@ -5,7 +5,11 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "electron ."
+    "start": "electron .",
+    "build:dev": "./node_modules/.bin/tsc",
+    "dev": "concurrently -k npm:start npm:build:dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -25,10 +29,14 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.69",
     "@electron-forge/maker-zip": "^6.0.0-beta.67",
     "@electron-forge/publisher-github": "^6.0.0-beta.69",
+    "@types/electron": "^1.6.10",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
     "electron": "^22.1.0",
-    "electron-reloader": "^1.2.3"
+    "electron-reloader": "^1.2.3",
+    "eslint": "latest",
+    "typescript": "^4.9.5"
   },
-  "dependencies": {},
   "config": {
     "forge": {
       "packagerConfig": {
@@ -68,8 +76,7 @@
         {
           "name": "@electron-forge/maker-deb",
           "config": {
-            "options": {
-            }
+            "options": {}
           }
         },
         {
