@@ -8,7 +8,9 @@
     "dev": "electron .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "package": "electron-forge package",
+    "publish": "electron-forge publish"
   },
   "repository": {
     "type": "git",
