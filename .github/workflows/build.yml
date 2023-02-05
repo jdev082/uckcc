@@ -1,0 +1,31 @@
+# taken from https://dev.to/abulka/comment/1dh3k thanks!
+name: Release UCKCC
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    steps:
+
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install
+      - name: Get tailwind styles
+        run: npm run tailwind:once
+      - name: Publish to release using Electron Forge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run publish
+      - name: Apple Silicon
+        if: ${{ matrix.os == 'macos-latest' }}
+        run: npm run publish -- --arch=arm64
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
