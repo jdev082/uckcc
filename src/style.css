@@ -1,10 +1,11 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 8pt;
+    background-color: #111827;
 }
 
 #branding {
-    background-color: lightgray;
+    background-color: #e5e7eb;
     padding: 4pt;
     font-weight: 100;
     border-radius: 4pt;
@@ -19,6 +20,14 @@ body {
 
 input {
     padding: 8pt;
+    border-radius: 12pt;
+    outline: none;
+    border: none;
+    transition:width 1s ease-in-out;
+}
+
+input:hover {
+    width: 50% !important;
 }
 
 #msgbox {
@@ -26,6 +35,7 @@ input {
     bottom: 0;
     left: 0;
     width: 45%;
+    margin: 4pt;
 }
 
 #srvbox {
@@ -33,6 +43,7 @@ input {
     bottom: 0;
     right: 0;
     width: 45%;
+    margin: 4pt;
 }
 
 *:focus {
